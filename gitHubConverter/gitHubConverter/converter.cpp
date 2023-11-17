@@ -4,14 +4,21 @@
 #include <iostream>
 
 char printMenu(); // function prototype. 
+float degreesToRadians(float userInput); // Leader first conversion prototype
 
 int main()
 {
     char menuOption = ' '; 
     menuOption = printMenu();// holds user option from the menu function 
-    if (menuOption = 'a')
+    float userInput = 0.0f; // holds what the user wants to convert
+    float answer = 0.0f; // holds the output for any of the conversions 
+    if (menuOption = 'A')
     {
-        std::cout << "Yet to be coded";
+        std::cout << "You would like to convert: from degrees to radians. \n \n" << std::endl; 
+        std::cout << "Please enter your measurement in degrees: "; 
+        std::cin >> userInput;
+        answer = degreesToRadians(userInput);
+        std::cout << "Your measurement is now: " << answer << std::endl;
     }
 	return 1;
 }
@@ -28,4 +35,13 @@ char printMenu() // written by leader
     std::cout << "Enter your Choice : ";
     std::cin >> choice;
     return choice;
+}
+
+float degreesToRadians(float userInput)
+{
+    float answer = 0.0f; 
+    const float CONVERSION_RATE = 57.2957795; 
+    answer = userInput / CONVERSION_RATE; // conversion formula from google 
+
+    return answer;
 }
