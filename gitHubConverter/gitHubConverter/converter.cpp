@@ -7,7 +7,7 @@ char printMenu(); // function prototype.
 float degreesToRadians(float userInput); // Leader first conversion prototype
 float fahrenheitToCelsius(float userInput); // written by second in command
 float stoneandpoundsToKilograms(float userInput); // written by second in command
-
+float centimetersToFeetAndInches(float userInput); // Leader conversion prototype
 
 int main()
 {
@@ -17,13 +17,21 @@ int main()
     float answer = 0.0f; // holds the output for any of the conversions 
     if (menuOption == 'A')
     {
-        std::cout << "You would like to convert: from degrees to radians. \n \n" << std::endl; 
+        std::cout << "\nYou would like to convert: from degrees to radians. \n \n" << std::endl; 
         std::cout << "Please enter your measurement in degrees: "; 
         std::cin >> userInput;
         answer = degreesToRadians(userInput);
         std::cout << "Your measurement is now: " << answer << std::endl;
     }
-    if (menuOption == 'f')
+    else if (menuOption == 'B')
+    {
+        std::cout << "\nYou would like to convert: from centimeters to feet & inches. \n \n" << std::endl;
+        std::cout << "Please enter your measurenment in centimeters: ";
+        std::cin >> userInput;
+        answer = centimetersToFeetAndInches(userInput);
+        std::cout << "Your measurement is now: " << answer << std::endl;
+    }
+    else if (menuOption == 'f')
     {
         std::cout << "You would like to convert: fahrenheit to celsius. \n \n" << std::endl;
         std::cout << "Please enter your measurement in fahrenheit: ";
@@ -50,7 +58,7 @@ char printMenu() // written by leader
     return choice;
 }
 
-float degreesToRadians(float t_userInput)
+float degreesToRadians(float t_userInput)// done by leader
 {
     float answer = 0.0f; 
     const float CONVERSION_RATE = 57.2957795; 
@@ -59,11 +67,18 @@ float degreesToRadians(float t_userInput)
     return answer;
 }
 
+float centimetersToFeetAndInches(float t_userInput) // done by leader
+{
+    float answer = 0.0f;
+    const float CONVERSION_RATE = 2.54;
+    answer = t_userInput / CONVERSION_RATE; // conversion rate formula from google 
+    return answer;
+}
+
 float fahrenheitToCelsius(float t_userInput)
 {
     float answer = 0.0f;
     answer = (t_userInput - 32 / 1.8); // conversion formula from google
-
     return answer;
 
 }
@@ -74,6 +89,7 @@ float stoneandpoundsToKilograms(float t_userInput)
     const float CONVERSION_RATE = 6.35;
     answer = t_userInput / CONVERSION_RATE; // conversion formula from google
 
+    answer = (t_userInput - 32 / 1.8);
     return answer;
 
 }
