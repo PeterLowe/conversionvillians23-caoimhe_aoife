@@ -6,6 +6,7 @@
 char printMenu(); // function prototype. 
 float degreesToRadians(float userInput); // Leader first conversion prototype
 float fahrenheitToCelsius(float userInput); // written by second in command
+float stoneandpoundsToKilograms(float userInput); // written by second in command
 
 
 int main()
@@ -61,7 +62,17 @@ float degreesToRadians(float t_userInput)
 float fahrenheitToCelsius(float t_userInput)
 {
     float answer = 0.0f;
-    answer = (t_userInput - 32 / 1.8);
+    answer = (t_userInput - 32 / 1.8); // conversion formula from google
+
+    return answer;
+
+}
+
+float stoneandpoundsToKilograms(float t_userInput)
+{
+    float answer = 0.0f;
+    const float CONVERSION_RATE = 6.35;
+    answer = t_userInput / CONVERSION_RATE; // conversion formula from google
 
     return answer;
 
