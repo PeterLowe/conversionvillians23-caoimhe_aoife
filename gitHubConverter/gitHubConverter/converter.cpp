@@ -7,6 +7,7 @@ char printMenu(); // function prototype.
 float degreesToRadians(float userInput); // Leader first conversion prototype
 float fahrenheitToCelsius(float userInput); // written by second in command
 float centimetersToFeetAndInches(float userInput); // Leader conversion prototype
+float litrestoGallons(float userInput); // Leader conversion prototype
 
 int main()
 {
@@ -28,6 +29,14 @@ int main()
         std::cout << "Please enter your measurenment in centimeters: ";
         std::cin >> userInput;
         answer = centimetersToFeetAndInches(userInput);
+        std::cout << "Your measurement is now: " << answer << std::endl;
+    }
+    else if (menuOption == 'C')
+    {
+        std::cout << "\nYou would like to convert: from litres to imperial gallons. \n \n" << std::endl;
+        std::cout << "Please enter your measurenment in litres: ";
+        std::cin >> userInput;
+        answer = litrestoGallons(userInput);
         std::cout << "Your measurement is now: " << answer << std::endl;
     }
     else if (menuOption == 'f')
@@ -72,6 +81,14 @@ float centimetersToFeetAndInches(float t_userInput) // done by leader
     const float CONVERSION_RATE = 2.54;
     answer = t_userInput / CONVERSION_RATE; // conversion rate formula from google 
     return answer;
+}
+
+float litrestoGallons(float t_userInput)
+{
+    float answer = 0.0f;
+    const float CONVERSION_RATE = 4.546092; 
+    answer = t_userInput / CONVERSION_RATE;
+    return answer; 
 }
 
 float fahrenheitToCelsius(float t_userInput)
