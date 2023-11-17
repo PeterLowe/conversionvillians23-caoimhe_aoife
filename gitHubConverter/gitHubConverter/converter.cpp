@@ -1,5 +1,5 @@
 // Leader: Caoimhe O'Brien 
-// Second in Command:
+// Second in Command: Aoife Leahy
 
 #include <iostream>
 
